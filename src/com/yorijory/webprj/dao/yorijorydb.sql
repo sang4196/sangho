@@ -1,0 +1,7 @@
+select * from YJMember;
+--MemberDao.gerMembers(int page)
+SELECT * FROM
+(
+	SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM, MEMBERS. * FROM MEMBERS
+) A
+WHERE NUM BETWEEN 11 AND 20;
